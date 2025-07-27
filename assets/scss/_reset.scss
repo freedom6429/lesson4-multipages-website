@@ -120,19 +120,12 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  letter-spacing: 0.05em;
 }
 
 a {
@@ -147,5 +140,5 @@ button {
 
 html {
   font-size: 10px;
-  font-family: "Noto Sans TC", sans-serif;
+  font-family: 'Noto Sans TC', sans-serif;
 }

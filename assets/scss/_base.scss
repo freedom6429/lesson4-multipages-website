@@ -2,9 +2,16 @@
 *,
 *::before,
 *::after {
+  box-sizing: border-box;
+  letter-spacing: 0.05em;
   color: $text-primary;
   line-height: $normal-line-height;
   font-size: $label-md;
+}
+
+img {
+  width: 100%;
+  vertical-align: middle;
 }
 
 // general link-item
