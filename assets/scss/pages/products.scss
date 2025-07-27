@@ -1,0 +1,140 @@
+@use '../reset' as *;
+@use '../variables' as *;
+@use '../base' as *;
+@use '../utilities' as *;
+@use '../components/breadcrumb' as *;
+@use '../components/cards' as *;
+@use '../components/buttons' as *;
+@use '../components/promotion' as *;
+
+main {
+  font-size: 1.6rem;
+
+  .breadcrumb {
+    margin-top: 3.2rem;
+  }
+
+  h2 {
+    font-size: 3.2rem;
+  }
+}
+
+.products {
+  padding-bottom: 3.2rem;
+
+  // 左側選單
+  .side-menu {
+    padding-right: 1.2rem;
+
+    li {
+      padding: 0.8rem 0;
+    }
+    a:link,
+    a:visited {
+      color: $text-primary;
+    }
+
+    a:hover,
+    a:active {
+      color: $text-highlight;
+    }
+  }
+
+  // 商品列表
+  .product-cards {
+    margin: 0 -1.2rem;
+
+    .product-item {
+      padding: 0 1.2rem;
+
+      &:last-of-type {
+        display: none;
+      }
+    }
+
+    .product-card {
+      a:link,
+      a:visited {
+        color: $text-primary;
+      }
+
+      a:hover {
+        img {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+// pagination
+.pagination {
+  .previous,
+  .next {
+    padding: 1rem;
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+      display: block;
+    }
+  }
+
+  .pages {
+    margin: 0 1.2rem;
+
+    .page {
+      padding: 0.8rem 1.5rem;
+      display: inline-block;
+      width: 4rem;
+      height: 4rem;
+      text-align: center;
+      vertical-align: middle;
+
+      &.active {
+        background-color: $primary-300;
+      }
+
+      &:hover {
+        color: $text-secondary;
+      }
+    }
+  }
+}
+
+/*===RWD===*/
+@media screen and (max-width: 768px) {
+  .breadcrumb {
+    font-size: $label-sm;
+    margin-top: $spacing-m;
+  }
+
+  // 左側選單
+  .side-menu {
+    display: none;
+  }
+
+  // 商品列表
+  .product-list {
+    width: 100%;
+
+    .product-cards {
+      margin: 0 -0.6rem;
+
+      .product-item {
+        padding: 0 0.6rem;
+        flex-grow: 1;
+
+        &:last-of-type {
+          display: block;
+
+          .product-card {
+            &__name {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

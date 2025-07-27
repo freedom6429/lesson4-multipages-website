@@ -1,0 +1,283 @@
+@use '../reset' as *;
+@use '../variables' as *;
+@use '../base' as *;
+@use '../utilities' as *;
+@use '../components/breadcrumb' as *;
+@use '../components/cards' as *;
+@use '../components/buttons' as *;
+
+main {
+  .mobile-image-wrapper {
+    width: 100%;
+    display: none;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+/* main-product */
+
+.main-product {
+  padding: $spacing-5xl 0;
+  margin: 0 -$spacing-s;
+
+  .product-images,
+  .product-info {
+    flex: 0 0 auto;
+    padding: 0 $spacing-s;
+    align-self: flex-start;
+  }
+
+  // product-images
+  .product-images {
+    font-size: 1.6rem;
+    margin: 0 -$spacing-xxs;
+
+    .product-image-item {
+      padding: 0 $spacing-xxs;
+    }
+  }
+
+  // product-info
+  .product-info {
+    flex-grow: 1;
+
+    // section description
+    .description {
+      .title {
+        font-size: 3.2rem;
+      }
+
+      .price {
+        .current-price {
+          font-size: $headings-5; // 2rem
+          color: $text-highlight;
+
+          .dollar-sign {
+            color: inherit;
+          }
+        }
+
+        .full-price {
+          display: inline-block;
+          margin-left: $spacing-xs;
+          font-size: 1.4rem;
+          color: $neutral-500; // #adb5bd
+          vertical-align: middle;
+          text-decoration: line-through;
+
+          .dollar-sign {
+            color: inherit;
+          }
+        }
+      }
+    }
+
+    // section specs
+    .color-list {
+      li {
+        width: 6.4rem;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      a:hover {
+        img {
+          opacity: 0.8;
+        }
+      }
+
+      p {
+        color: $neutral-600; // #6c757d
+        text-align: center;
+      }
+    }
+
+    .size-list {
+      li {
+        width: 16rem;
+      }
+    }
+
+    .stock-warning {
+      color: $danger-300; // #d74f4f
+      font-size: 1.4rem;
+    }
+
+    // cta
+    .cta {
+      .add-like,
+      .reservation {
+        text-align: center;
+        border: 1px solid $neutral-900; // #212529
+        border-radius: 4px;
+        padding: $spacing-s 0;
+      }
+
+      .add-like {
+        flex: 1;
+      }
+
+      .reservation {
+        flex: 1;
+      }
+
+      .add-like-mobile {
+        background-image: url('../../images/heart.svg');
+        background-repeat: no-repeat;
+        background-size: 2.4rem 2.4rem;
+        background-position: center;
+        display: none;
+      }
+    }
+
+    // other
+    .other {
+      div {
+        padding: $spacing-s 0;
+        border-bottom: 1px solid $neutral-300; // #dee2e6
+      }
+
+      li,
+      p {
+        color: $neutral-600; // #6c757d
+      }
+    }
+  }
+}
+
+// reference
+.reference {
+  padding: $spacing-3xl 0;
+
+  h2 {
+    font-size: $headings-4; // 2.4rem
+  }
+
+  .refer-list {
+    margin: 0 -$spacing-s;
+
+    .refer-item {
+      padding: 0 $spacing-s;
+      flex: 1;
+
+      .refer-link {
+        &:link,
+        &:visited {
+          color: $text-primary; // #212529
+        }
+
+        &:hover {
+          img {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*===RWD===*/
+@media screen and (max-width: 768px) {
+  .main-product {
+    margin: 0;
+    padding: 0;
+
+    .product-images {
+      flex-grow: 1;
+      padding: 0;
+      margin-left: -$spacing-s;
+      margin-right: -$spacing-s;
+
+      li:not(:first-child) {
+        display: none;
+      }
+
+      li:first-child {
+        width: 100%;
+      }
+    }
+
+    .product-info {
+      margin-top: $spacing-l;
+      padding: 0;
+
+      .description {
+        padding: 0;
+
+        .title {
+          font-family: Montserrat, sans-serif;
+          font-size: $headings-4;
+        }
+
+        .price {
+          font-family: Montserrat, sans-serif;
+
+          .current-price {
+            font-size: $label-md; // 1.6rem
+            font-weight: $noto-sans-tc-bold;
+          }
+
+          .full-price {
+            font-size: $label-md; // 1.6rem
+            font-weight: $noto-sans-tc-regular;
+          }
+        }
+      }
+
+      .specs {
+        padding: 0;
+      }
+
+      .cta {
+        .add-like {
+          display: none;
+        }
+
+        .reservation {
+          width: 100%;
+          flex-grow: 1;
+        }
+
+        .add-like-mobile {
+          display: inline-block;
+          width: 4.8rem;
+          padding: $spacing-s 0;
+
+          &:active {
+            background-image: url('/images/heart-fill.svg');
+          }
+        }
+      }
+    }
+  }
+
+  // reference
+  .reference {
+    padding: $spacing-2xl 0;
+
+    h2 {
+      font-size: $headings-5;
+    }
+
+    .refer-list {
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      margin: 0 -$spacing-s;
+      padding: 0 $spacing-s;
+
+      .refer-item {
+        padding: 0 $spacing-xs;
+        flex: 0 0 30rem;
+
+        .card,
+        .card__image-wrapper {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

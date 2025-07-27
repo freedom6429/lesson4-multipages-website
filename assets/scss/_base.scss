@@ -1,0 +1,34 @@
+@use './variables' as *;
+*,
+*::before,
+*::after {
+  color: $text-primary;
+  line-height: $normal-line-height;
+  font-size: $label-md;
+}
+
+// general link-item
+.normal-link-item {
+  &:link,
+  &:visited {
+    color: $text-primary;
+  }
+
+  &:hover,
+  &:active {
+    color: $text-secondary;
+  }
+}
+
+// image-container
+.image-container {
+  width: 100%;
+
+  img {
+    width: 100%;
+  }
+}
+
+.dollar-sign {
+  font-family: 'Roboto Mono', sans-serif;
+}

@@ -1,0 +1,136 @@
+@use '../reset' as *;
+@use '../variables' as *;
+@use '../layout' as *;
+@use '../base' as *;
+@use '../utilities' as *;
+@use '../components/buttons' as *;
+
+main {
+  .container {
+    max-width: 63.6rem;
+
+    .favorites-panel {
+      margin: $spacing-5xl 0;
+
+      svg {
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+
+      h2.heading {
+        font-size: $headings-3;
+
+        .check-icon {
+          width: 4rem;
+          height: 4rem;
+          background-color: $primary-300;
+          border-radius: 50%;
+
+          svg.bi-check {
+            color: $primary-500;
+          }
+        }
+      }
+
+      // 營業時間
+      .note {
+        padding: $spacing-m;
+        background-color: $primary-100;
+
+        .opening-time span {
+          color: $primary-400;
+        }
+
+        .truck-icon {
+          display: inline-block;
+          color: $primary-400;
+          margin-right: $spacing-s;
+
+          svg.bi-truck {
+            fill: $primary-400;
+          }
+        }
+      }
+
+      .favorites {
+        &-item {
+          border-bottom: 1px solid $neutral-300;
+          padding: $spacing-xl 0;
+
+          .image-container {
+            flex: 0 0 12rem;
+          }
+
+          &__info {
+            flex: 1;
+            flex-direction: column;
+          }
+
+          &__title {
+            text-transform: uppercase;
+            font-size: $label-lg;
+          }
+
+          &__size,
+          &__color {
+            span {
+              display: inline-block;
+              margin-left: $spacing-s;
+              font-family: Montserrat, sans-serif;
+            }
+          }
+
+          &__price {
+            text-align: right;
+            font-family: Montserrat, sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+          }
+        }
+      }
+
+      .cta-reservation {
+        text-align: center;
+      }
+    }
+  }
+}
+
+/*===RWD===*/
+@media screen and (max-width: 768px) {
+  main .container {
+    .favorites-panel {
+      margin: $spacing-l 0;
+
+      h2.heading {
+        font-size: $headings-4;
+
+        .check-icon {
+          width: 4rem;
+          height: 4rem;
+        }
+      }
+
+      .note {
+        align-items: center;
+        .opening-time span {
+          display: block;
+        }
+      }
+
+      .favorites {
+        &-item {
+          padding: $spacing-l 0 $spacing-xl 0;
+
+          &__title {
+            font-size: $label-md;
+          }
+
+          &__price {
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}

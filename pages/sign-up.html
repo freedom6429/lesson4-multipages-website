@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mina:wght@700&family=Noto+Sans+TC:wght@400;500;600;700&family=Roboto+Mono&family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>URBNSTEP 首頁</title>
+  </head>
+  <body>
+    <%- include("layout-and-components/header.ejs") %>
+    <main>
+      <div class="container">
+        <div class="sign-up d-flex gap-l">
+          <aside class="poster">
+            <h2 class="heading">URBNSTEP</h2>
+            <h3 class="heading">Your Step, Your Statement</h3>
+          </aside>
+
+          <div class="sign-up-panel">
+            <h3 class="heading mb-xl t-center">歡迎！</h3>
+            <ul class="tab-links d-flex mb-xl">
+              <li class="tab-item"><button class="selected t-center">登入</button></li>
+              <li class="tab-item"><button class="t-center">註冊</button></li>
+            </ul>
+            <ul class="sign-up-links">
+              <li class="sign-up-item mb-xs">
+                <a href="#" class="sign-up-item__link d-flex ai-center gap-s">
+                  <img src="/images/facebook.svg" alt="臉書logo" class="fb-logo" />
+                  <span>Facebook 登入</span>
+                </a>
+              </li>
+              <li class="sign-up-item mb-xs">
+                <a href="#" class="sign-up-item__link d-flex ai-center gap-s">
+                  <img src="/images/apple.svg" alt="蘋果logo" class="apple-logo" />
+                  <span>Apple 登入</span>
+                </a>
+              </li>
+              <li class="sign-up-item">
+                <a href="#" class="sign-up-item__link d-flex ai-center gap-s">
+                  <img src="/images/google.svg" alt="google logo" class="google-logo" />
+                  <span>Google 登入</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <%- include
+    ("layout-and-components/footer.ejs") %>
+    <script type="module" src="/js/sign-up.js"></script>
+  </body>
+</html>

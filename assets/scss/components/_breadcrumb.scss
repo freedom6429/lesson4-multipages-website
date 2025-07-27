@@ -1,0 +1,21 @@
+@use '../variables' as *;
+
+.breadcrumb {
+  .breadcrumb-link {
+    &:link,
+    &:visited {
+      color: $text-secondary;
+    }
+
+    &:hover,
+    &:active,
+    &.active {
+      color: $text-primary;
+    }
+  }
+  .forward-slash {
+    display: inline-block;
+    margin: 0 $spacing-s;
+    color: $neutral-300;
+  }
+}

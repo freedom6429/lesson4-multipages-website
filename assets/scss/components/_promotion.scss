@@ -1,0 +1,30 @@
+@use '../variables' as *;
+@use '../utilities' as *;
+@use '../components/buttons' as *;
+
+.promotion {
+  h3 {
+    font-size: $headings-4; // 2.4rem
+    background-color: $primary-200;
+    text-align: center;
+    padding: 3.35rem 0;
+  }
+
+  .cta-sign-in {
+    margin-left: $spacing-l;
+  }
+}
+
+/*===RWD===*/
+@media screen and (max-width: 768px) {
+  .promotion {
+    h3 {
+      font-size: $headings-5; // 2rem
+      padding: $spacing-xl 0;
+    }
+
+    .cta-sign-in {
+      margin-left: $spacing-m;
+    }
+  }
+}

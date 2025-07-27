@@ -1,0 +1,116 @@
+@use '../reset' as *;
+@use '../variables' as *;
+@use '../layout' as *;
+@use '../base' as *;
+@use '../utilities' as *;
+@use '../components/buttons' as *;
+
+main {
+  .sign-up {
+    padding: $spacing-5xl 0;
+  }
+  .poster {
+    background-image: url('/images/banner-sm.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 7.1rem $spacing-2xl 41.6rem $spacing-2xl;
+    max-width: 52.6rem;
+    flex: 1;
+    border-radius: $radius-s;
+
+    h2.heading {
+      font-size: $display-2;
+      color: $text-on-dark;
+      margin-bottom: 1.5rem;
+    }
+
+    h3.heading {
+      font-size: $headings-4;
+      color: $neutral-500;
+      font-family: Montserrat, sans-serif;
+      text-align: right;
+    }
+  }
+
+  .sign-up-panel {
+    padding: 12rem $spacing-6xl;
+    flex: 1;
+    background-color: #f3f3f3;
+    border-radius: $radius-s;
+
+    h3.heading {
+      font-size: $headings-3;
+    }
+
+    .tab-links {
+      .tab-item {
+        flex: 1;
+
+        button {
+          display: block;
+          width: 100%;
+          padding: $spacing-s;
+          border-bottom: 2px solid $neutral-300;
+          color: $neutral-600;
+          font-weight: $noto-sans-tc-bold;
+          line-height: 1.2;
+
+          &:hover {
+            color: $text-primary;
+            border-bottom: 2px solid $neutral-900;
+          }
+
+          &.selected {
+            color: $text-primary;
+            border-bottom: 2px solid $neutral-900;
+            pointer-events: none;
+            cursor: default;
+          }
+        }
+      }
+    }
+  }
+
+  .sign-up-links {
+    .sign-up-item__link {
+      padding: $spacing-s;
+      background-color: #fff;
+      border: 1px solid $neutral-300;
+      border-radius: $radius-xs;
+    }
+  }
+}
+
+/*===RWD===*/
+@media screen and (max-width: 768px) {
+  main {
+    .sign-up {
+      display: block;
+      padding: 0;
+
+      .poster {
+        padding: $spacing-l $spacing-l 15rem $spacing-l;
+        border-radius: 0;
+        margin: 0 (-$spacing-s);
+        max-width: calc(100% + $spacing-l); // 不改html讓poster突破container
+
+        h2.heading {
+          font-size: $headings-2;
+          margin-bottom: 0.9rem;
+        }
+
+        h3.heading {
+          font-size: $label-md;
+          text-align: left;
+        }
+      }
+
+      .sign-up-panel {
+        background-color: #fff;
+        border-radius: 0;
+        padding: $spacing-xl 0;
+      }
+    }
+  }
+}

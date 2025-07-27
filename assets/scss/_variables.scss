@@ -1,0 +1,91 @@
+@use './reset' as *;
+
+// color
+$primary-100: #f5fee7;
+$primary-200: #e8fec5;
+$primary-300: #c0f173;
+$primary-400: #57a203;
+$primary-500: #477a11;
+
+$neutral-0: #ffffff;
+$neutral-100: #f8f9fa;
+$neutral-200: #e9ecef;
+$neutral-300: #dee2e6;
+$neutral-400: #ced4da;
+$neutral-500: #adb5bd;
+$neutral-600: #6c757d;
+$neutral-700: #495057;
+$neutral-800: #343a40;
+$neutral-900: #212529;
+
+$danger-100: #fcf1f1;
+$danger-200: #eba7a7;
+$danger-300: #d74f4f;
+
+$warning-100: #fef6ec;
+$warning-200: #f9c588;
+$warning-300: #f38b12;
+
+$success-100: #eff8f4;
+$success-200: #9ad1ba;
+$success-300: #36a375;
+
+$info-100: #eef5fc;
+$info-200: #97c3ed;
+$info-300: #3087db;
+
+$text-primary: #212529;
+$text-secondary: #6c757d;
+$text-muted: #adb5bd;
+$text-highlight: #57a203;
+$text-on-dark: #ffffff;
+
+// Typography
+// font-weight
+$noto-sans-tc-regular: 400;
+$noto-sans-tc-medium: 500;
+$noto-sans-tc-bold: 700;
+
+// line-height
+$heading-line-height: 1.2;
+$normal-line-height: 1.5;
+
+// font-size
+$display-1: 6.4rem;
+$display-2: 4.8rem;
+$headings-1: 4rem;
+$headings-2: 3.2rem;
+$headings-3: 2.8rem;
+$headings-4: 2.4rem;
+$headings-5: 2rem;
+$headings-6: 1.6rem;
+$label-lg: 2rem;
+$label-md: 1.6rem;
+$label-sm: 1.4rem;
+$label-xs: 1.2rem;
+$paragraph-lg: 2rem;
+$paragraph-md: 1.6rem;
+$paragraph-sm: 1.4rem;
+$paragraph-xs: 1.2rem;
+
+// screen breakpoints
+// $screen-md: 768px;
+
+// spacing
+$spacing-xxs: 0.4rem;
+$spacing-xs: 0.8rem;
+$spacing-s: 1.2rem;
+$spacing-m: 1.6rem;
+$spacing-l: 2.4rem;
+$spacing-xl: 3.2rem;
+$spacing-2xl: 4rem;
+$spacing-3xl: 4.8rem;
+$spacing-4xl: 5.6rem;
+$spacing-5xl: 6.4rem;
+$spacing-6xl: 8rem;
+
+// radius
+$radius-xs: 0.4rem;
+$radius-s: 0.8rem;
+$radius-md: 1.2rem;
+$radius-rounded: 100rem;

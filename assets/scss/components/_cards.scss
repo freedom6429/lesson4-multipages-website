@@ -1,0 +1,143 @@
+@use '../variables' as *;
+
+.card {
+  // general
+  &__image-wrapper {
+    width: 100%;
+
+    img {
+      width: 100%;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &__dollar {
+    font-family: 'Roboto Mono', sans-serif;
+  }
+
+  &.product-card {
+    &:link,
+    &:visited {
+      color: $text-primary;
+    }
+
+    &:hover {
+      .card__image-wrapper img {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+// product-card-large
+
+.product-card-large {
+  &__image {
+    margin-bottom: $spacing-s;
+  }
+
+  &__title {
+    font-size: $headings-5; // 2rem
+    font-weight: $noto-sans-tc-bold;
+    margin-bottom: $spacing-xxs;
+  }
+
+  &__price {
+    font-size: $label-md;
+    font-weight: $noto-sans-tc-medium;
+  }
+}
+
+// image-card
+.image-card {
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+  }
+
+  &:hover {
+    img {
+      opacity: 0.7;
+    }
+  }
+}
+
+// category-card
+.category-card {
+  display: flex;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  justify-content: center;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  &__title {
+    padding-top: 11.8rem;
+    padding-bottom: 11.7rem;
+    text-align: center;
+    z-index: 999;
+
+    .english,
+    .chinese {
+      color: $text-on-dark;
+      font-size: $headings-4; // 2.4rem
+      font-weight: $noto-sans-tc-bold;
+    }
+
+    .english {
+      transition: all 0.3s ease-in-out;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &:hover {
+    .english {
+      color: $primary-300;
+    }
+  }
+}
+
+// RWD
+@media screen and (max-width: 768px) {
+  .card {
+    &__title {
+      padding: 0;
+      margin-bottom: 0;
+    }
+  }
+  // image-card
+  .image-card {
+    width: 100%;
+    padding: 0;
+  }
+
+  // category-card {
+  .category-card {
+    &__title {
+      padding-top: 6.25rem;
+      padding-bottom: 6.1rem;
+    }
+
+    h4.english,
+    h4.chinese {
+      font-size: $label-md;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+@use '../variables' as *;
+@use '../utilities' as *;
+@use '../layout' as *;
+@use '../mixins' as *;
+@use '../base' as *;
+
+.nav {
+  padding: 1.7rem 0;
+
+  .logo-wrapper {
+    width: 12.9rem;
+    margin-right: $spacing-3xl;
+    height: 4.6rem;
+  }
+
+  .logo {
+    @include logoStyle;
+    margin-right: 60px;
+  }
+
+  .nav-links {
+    font-size: 1.6rem;
+
+    &.d-flex {
+      gap: $spacing-2xl;
+    }
+  }
+
+  .nav-icon-link {
+    margin-left: auto;
+
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+      margin-right: $spacing-s;
+    }
+  }
+}
+
+/*===RWD===*/
+@media screen and (max-width: 768px) {
+  .nav {
+    padding: 1.3rem $spacing-s;
+  }
+
+  header .nav-links {
+    display: none;
+  }
+}
