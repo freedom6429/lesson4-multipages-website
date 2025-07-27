@@ -159,7 +159,6 @@ main {
 
   .refer-list {
     margin: 0 (-$spacing-s);
-    padding-top: $spacing-m;
 
     .refer-item {
       padding: 0 $spacing-s;
@@ -268,7 +267,6 @@ main {
       overflow-x: auto;
       scroll-behavior: smooth;
       margin: 0 (-$spacing-s);
-      padding: 0 ($spacing-s);
 
       .refer-item {
         padding: 0 $spacing-xs;
