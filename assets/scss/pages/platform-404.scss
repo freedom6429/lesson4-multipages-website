@@ -126,7 +126,7 @@ main {
       }
 
       .add-like-mobile {
-        background-image: url('../../images/heart.svg');
+        background-image: url('/images/heart.svg');
         background-repeat: no-repeat;
         background-size: 2.4rem 2.4rem;
         background-position: center;
@@ -158,7 +158,8 @@ main {
   }
 
   .refer-list {
-    margin: 0 -$spacing-s;
+    margin: 0 (-$spacing-s);
+    padding-top: $spacing-m;
 
     .refer-item {
       padding: 0 $spacing-s;
@@ -189,8 +190,8 @@ main {
     .product-images {
       flex-grow: 1;
       padding: 0;
-      margin-left: -$spacing-s;
-      margin-right: -$spacing-s;
+      margin-left: (-$spacing-s);
+      margin-right: (-$spacing-s);
 
       li:not(:first-child) {
         display: none;
@@ -266,8 +267,8 @@ main {
     .refer-list {
       overflow-x: auto;
       scroll-behavior: smooth;
-      margin: 0 -$spacing-s;
-      padding: 0 $spacing-s;
+      margin: 0 (-$spacing-s);
+      padding: 0 ($spacing-s);
 
       .refer-item {
         padding: 0 $spacing-xs;

@@ -307,13 +307,14 @@ main {
     // 聯名企劃
     .campaign {
       padding-top: $spacing-5xl;
+      overflow: hidden;
 
       &__sparkle {
         display: block;
         width: 7.6rem;
         height: 6.4rem;
-        top: 28.2rem;
-        left: 32.7rem;
+        top: 70%;
+        right: -2.8rem;
       }
 
       &__star {
