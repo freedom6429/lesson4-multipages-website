@@ -11,6 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
+.vite/
 
 # Editor directories and files
 .vscode/*
@@ -23,6 +24,8 @@ dist-ssr
 *.sln
 *.sw?
 
+# gh-pages cache (重要的，確保清理)
+.cache/gh-pages/
 
 # assets暫存圖檔資料夾
 assets/images/
