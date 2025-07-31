@@ -1,0 +1,1 @@
+import"./common-51aIRTkM.js";/* empty css                 */console.log("sign-up page Loaded");let e;function o(){clearTimeout(e),e=setTimeout(()=>{document.body.scrollWidth>window.innerWidth?console.warn("⚠️ 警告：頁面有水平滾動條！"):console.log("✅ 頁面無水平滾動條。")},250)}window.addEventListener("load",o);window.addEventListener("resize",o);
