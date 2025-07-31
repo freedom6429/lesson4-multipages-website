@@ -16,7 +16,7 @@
 
     <main class="mb-3xl mb-mobile-l">
       <div class="container">
-        <div class="breadcrumb mb-l mb-mobile-s">
+        <nav class="breadcrumb mb-l mb-mobile-s">
           <ol class="d-flex">
             <li>
               <a href="#" class="breadcrumb-link fw-md">首頁</a><span class="forward-slash">/</span>
@@ -26,7 +26,7 @@
             </li>
             <li><p class="breadcrumb-link active fw-md">所有商品</p></li>
           </ol>
-        </div>
+        </nav>
         <h2 class="heading mb-l">女鞋</h2>
         <div class="products d-flex mb-3xl mb-mobile-l">
           <div class="side-menu col-2">
@@ -44,7 +44,7 @@
             <ul class="product-cards d-flex wrap">
               <li class="product-item mb-3xl col-4 mb-mobile-l col-mobile-6">
                 <a
-                  href="/lesson4-multipages-website/platform-404.html"
+                  href="<%= MODE === 'development' ? '/pages/platform-404.html' : BASE_URL + 'platform-404.html' %>"
                   target="_blank"
                   class="card product-card product-card-medium"
                 >

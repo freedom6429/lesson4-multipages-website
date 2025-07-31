@@ -1,21 +1,31 @@
 <header class="header">
   <nav class="nav d-flex ai-center">
     <h1 class="logo-wrapper">
-      <a href="/lesson4-multipages-website/index.html" class="logo">URBNSTEP</a>
+      <a
+        href="<%= MODE === 'development' ? '/pages/index.html' : BASE_URL + 'index.html' %>"
+        class="logo"
+        >URBNSTEP</a
+      >
     </h1>
     <ul class="nav-links d-flex">
       <li>
-        <a href="/lesson4-multipages-website/products.html" class="normal-link-item fw-md"
+        <a
+          href="<%= MODE === 'development' ? '/pages/products.html' : BASE_URL + 'products.html' %>"
+          class="normal-link-item fw-md"
           >商品列表</a
         >
       </li>
       <li>
-        <a href="/lesson4-multipages-website/brand-story.html" class="normal-link-item fw-md"
+        <a
+          href="<%= MODE === 'development' ? '/pages/brand-story.html' : BASE_URL + 'brand-story.html' %>"
+          class="normal-link-item fw-md"
           >品牌故事</a
         >
       </li>
     </ul>
-    <a href="/lesson4-multipages-website/sign-up.html" class="nav-icon-link normal-link-item"
+    <a
+      href="<%= MODE === 'development' ? '/pages/sign-up.html' : BASE_URL + 'sign-up.html' %>"
+      class="nav-icon-link normal-link-item"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"

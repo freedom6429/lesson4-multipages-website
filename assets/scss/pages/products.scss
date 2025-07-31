@@ -1,7 +1,5 @@
-@use '../reset' as *;
-@use '../variables' as *;
-@use '../base' as *;
-@use '../utilities' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 @use '../components/breadcrumb' as *;
 @use '../components/cards' as *;
 @use '../components/buttons' as *;
@@ -12,6 +10,11 @@ main {
 
   .breadcrumb {
     margin-top: 3.2rem;
+
+    @include mobile {
+      font-size: $label-sm;
+      margin-top: $spacing-m;
+    }
   }
 
   h2 {
@@ -21,6 +24,12 @@ main {
 
 .products {
   padding-bottom: 3.2rem;
+
+  @include mobile {
+    .product-list {
+      width: 100%;
+    }
+  }
 
   // 左側選單
   .side-menu {
@@ -38,30 +47,52 @@ main {
     a:active {
       color: $text-highlight;
     }
+
+    @include mobile {
+      display: none;
+    }
   }
 
   // 商品列表
   .product-cards {
     margin: 0 -1.2rem;
 
-    .product-item {
-      padding: 0 1.2rem;
+    @include mobile {
+      margin: 0 -0.6rem;
+    }
+  }
 
-      &:last-of-type {
-        display: none;
-      }
+  .product-item {
+    padding: 0 1.2rem;
+
+    &:last-of-type {
+      display: none;
     }
 
-    .product-card {
-      a:link,
-      a:visited {
-        color: $text-primary;
-      }
+    @include mobile {
+      padding: 0 0.6rem;
+      flex-grow: 1;
 
-      a:hover {
-        img {
-          opacity: 0.8;
-        }
+      &:last-of-type {
+        display: block;
+      }
+    }
+  }
+
+  .product-card {
+    a:link,
+    a:visited {
+      color: $text-primary;
+    }
+
+    a:hover {
+      img {
+        opacity: 0.8;
+      }
+    }
+    @include mobile {
+      &__name {
+        margin-bottom: 0;
       }
     }
   }
@@ -98,43 +129,6 @@ main {
       &:hover {
         color: $text-secondary;
         background-color: $neutral-100;
-      }
-    }
-  }
-}
-
-/*===RWD===*/
-@media screen and (max-width: 768px) {
-  .breadcrumb {
-    font-size: $label-sm;
-    margin-top: $spacing-m;
-  }
-
-  // 左側選單
-  .side-menu {
-    display: none;
-  }
-
-  // 商品列表
-  .product-list {
-    width: 100%;
-
-    .product-cards {
-      margin: 0 -0.6rem;
-
-      .product-item {
-        padding: 0 0.6rem;
-        flex-grow: 1;
-
-        &:last-of-type {
-          display: block;
-
-          .product-card {
-            &__name {
-              margin-bottom: 0;
-            }
-          }
-        }
       }
     }
   }

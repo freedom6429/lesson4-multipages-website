@@ -1,7 +1,7 @@
 <div class="promotion">
   <h3 class="heading">
     加入會員取得 9 折優惠<a
-      href="/lesson4-multipages-website/sign-up.html"
+      href="<%= MODE === 'development' ? '/pages/sign-up.html' : BASE_URL + 'sign-up.html' %>"
       class="cta-sign-in button button--filled button--large fw-md"
       >馬上註冊</a
     >

@@ -1,8 +1,16 @@
 /* layout */
 .nav,
 .container {
-  max-width: 129.6rem;
+  max-width: 132rem;
   margin: 0 auto;
+}
+
+.nav {
+  padding: 1.7rem 1.2rem;
+}
+
+.container {
+  padding: 0 1.2rem;
 }
 
 /* grid system */
@@ -32,4 +40,11 @@
 
 .col-10 {
   width: calc(10 / 12 * 100%);
+}
+
+/*===RWD===*/
+@media screen and (max-width: 768px) {
+  main .container {
+    width: 100%;
+  }
 }

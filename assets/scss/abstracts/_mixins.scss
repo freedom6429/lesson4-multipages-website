@@ -7,3 +7,9 @@
   text-wrap: nowrap;
   overflow: hidden;
 }
+
+@mixin mobile {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}

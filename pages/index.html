@@ -16,12 +16,16 @@
     <!-- mobile顯示 -->
     <nav class="mobile-nav-bar">
       <div class="nav-item nav-item-1 col-6">
-        <a class="nav-link fw-md t-center" href="/lesson4-multipages-website/products.html"
+        <a
+          class="nav-link fw-md t-center"
+          href="<%= MODE === 'development' ? '/pages/products.html' : BASE_URL + 'products.html' %>"
           >商品列表</a
         >
       </div>
       <div class="nav-item nav-item-2 col-6">
-        <a class="nav-link fw-md t-center" href="/lesson4-multipages-website/brand-story.html"
+        <a
+          class="nav-link fw-md t-center"
+          href="<%= MODE === 'development' ? '/pages/brand-story.html' : BASE_URL + 'brand-story.html' %>"
           >品牌故事</a
         >
       </div>
@@ -32,7 +36,9 @@
         <h2 class="heading mb-m mb-mobile-xs">URBNSTEP</h2>
         <h3 class="heading mb-3xl mb-mobile-xl">Your Step, Your Statement</h3>
         <div class="cta-go-shopping">
-          <a class="button button--primary fw-500" href="/lesson4-multipages-website/products.html"
+          <a
+            class="button button--primary fw-500"
+            href="<%= MODE === 'development' ? '/pages/products.html' : BASE_URL + 'products.html' %>"
             >立即選購</a
           >
         </div>
@@ -45,9 +51,9 @@
           <h2 class="heading t-center mb-s mb-mobile-xs">New Arrival</h2>
           <h3 class="heading t-center mb-xl mb-mobile-l">新品上市</h3>
           <div class="new-products">
-            <ul class="row-1 d-flex mb-2xl">
-              <li class="product-card-item col-6">
-                <a href="#" class="card product-card product-card--large">
+            <ul class="row-1 d-flex mb-2xl wrap">
+              <li class="product-card-item col-6 mb-2xl">
+                <a href="#" class="card product-card product-card-large">
                   <div class="card__image-wrapper">
                     <img
                       class="product-card-large__image"
@@ -61,7 +67,7 @@
                   </div>
                 </a>
               </li>
-              <li class="product-card-item col-6">
+              <li class="product-card-item col-6 mb-2xl">
                 <a href="#" class="card product-card product-card--large">
                   <div class="card__image-wrapper">
                     <img
@@ -76,8 +82,6 @@
                   </div>
                 </a>
               </li>
-            </ul>
-            <ul class="row-2 d-flex">
               <li class="product-card-item col-6">
                 <a href="#" class="card product-card product-card-large">
                   <div class="card__image-wrapper">
@@ -105,6 +109,7 @@
                 </a>
               </li>
             </ul>
+            <!-- <   -->
           </div>
         </div>
         <div class="hot mb-3xl mb-mobile-l">
@@ -133,10 +138,10 @@
           </ul>
         </div>
       </div>
-      <div class="campaign mb-3xl">
-        <img src="/images/sparkle.svg" alt="火花" class="campaign__sparkle" />
-        <img src="/images/star.svg" alt="星星" class="campaign__star" />
+      <div class="campaign mb-3xl mb-mobile-l">
         <div class="content">
+          <img src="/images/sparkle.svg" alt="火花" class="sparkle" />
+          <img src="/images/star.svg" alt="星星" class="star" />
           <h2 class="heading mb-m mb-mobile-m">URBNSTEP <span>x</span> Kevin Chen</h2>
           <h3 class="heading mb-xl mb-mobile-l">跨界聯名，限量發售</h3>
           <p class="mb-3xl desktop-text">新銳漫畫家 Kevin Chen 親自操刀設計，街頭能量全面引爆！</p>
@@ -160,7 +165,7 @@
         <div class="categories">
           <h3 class="heading mb-m">依系列選購</h3>
           <ul class="category-list d-flex wrap">
-            <li class="category-item col-mobile-6">
+            <li class="category-item col-3 col-mobile-6 mb-mobile-s">
               <a
                 href="#"
                 class="card category-card"
@@ -172,7 +177,7 @@
                 </div>
               </a>
             </li>
-            <li class="category-item col-mobile-6">
+            <li class="category-item col-3 col-mobile-6 mb-mobile-s">
               <a
                 href="#"
                 class="card category-card"
@@ -184,7 +189,7 @@
                 </div>
               </a>
             </li>
-            <li class="category-item col-mobile-6">
+            <li class="category-item col-3 col-mobile-6">
               <a
                 href="#"
                 class="card category-card"
@@ -196,7 +201,7 @@
                 </div>
               </a>
             </li>
-            <li class="category-item col-mobile-6">
+            <li class="category-item col-3 col-mobile-6">
               <a
                 href="#"
                 class="card category-card"

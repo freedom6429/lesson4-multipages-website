@@ -2,16 +2,24 @@
   <div class="container">
     <nav class="footer-nav d-flex mb-l">
       <h2 class="footer-logo-wrapper mb-mobile-xs">
-        <a href="/lesson4-multipages-website/index.html" class="logo">URBNSTEP</a>
+        <a
+          href="<%= MODE === 'development' ? '/pages/index.html' : BASE_URL + 'index.html' %>"
+          class="logo"
+          >URBNSTEP</a
+        >
       </h2>
       <ul class="nav-links d-flex ai-center gap-40">
         <li>
-          <a href="/lesson4-multipages-website/products.html" class="normal-link-item fw-md"
+          <a
+            href="<%= MODE === 'development' ? '/pages/products.html' : BASE_URL + 'products.html' %>"
+            class="normal-link-item fw-md"
             >商品列表</a
           >
         </li>
         <li>
-          <a href="/lesson4-multipages-website/brand-story.html" class="normal-link-item fw-md"
+          <a
+            href="<%= MODE === 'development' ? '/pages/brand-story.html' : BASE_URL + 'brand-stroy.html' %>"
+            class="normal-link-item fw-md"
             >品牌故事</a
           >
         </li>

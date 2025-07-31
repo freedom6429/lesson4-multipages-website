@@ -1,6 +1,5 @@
-@use '../variables' as *;
-@use '../utilities' as *;
-@use '../components/buttons' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 .promotion {
   h3 {
@@ -13,11 +12,8 @@
   .cta-sign-in {
     margin-left: $spacing-l;
   }
-}
 
-/*===RWD===*/
-@media screen and (max-width: 768px) {
-  .promotion {
+  @include mobile {
     h3 {
       font-size: $headings-5; // 2rem
       padding: $spacing-xl 0;

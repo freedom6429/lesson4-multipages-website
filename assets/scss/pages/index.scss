@@ -1,14 +1,32 @@
-@use '../reset' as *;
-@use '../variables' as *;
-@use '../layout' as *;
-@use '../base' as *;
-@use '../utilities' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 @use '../components/buttons' as *;
 @use '../components/cards' as *;
 
 // mobile-nav-bar
 .mobile-nav-bar {
   display: none;
+
+  @include mobile {
+    display: flex;
+
+    .nav-item {
+      .nav-link {
+        display: block;
+        font-size: 1.6rem;
+        padding: $spacing-s 0;
+        line-height: 1.5;
+      }
+    }
+
+    .nav-item-1 {
+      background-color: $primary-200;
+    }
+
+    .nav-item-2 {
+      background-color: $primary-100;
+    }
+  }
 }
 
 // hero
@@ -34,205 +52,8 @@
       font-size: $headings-3; //2.8rem
     }
   }
-}
 
-// main
-main {
-  h3.heading {
-    font-size: $headings-2; // 3.2rem
-  }
-
-  // 新品上市
-  .new-arrival {
-    padding: $spacing-5xl 0;
-
-    h2.heading {
-      font-size: $display-2; // 4.8rem;
-    }
-
-    .new-products {
-      margin: 0 (-$spacing-s);
-
-      .product-card-item {
-        padding: 0 $spacing-s;
-      }
-    }
-  }
-
-  // 熱銷補貨
-  .hot {
-    padding: $spacing-5xl 0;
-
-    .hot-products {
-      margin: 0 (-$spacing-s);
-
-      .hot-product-item {
-        padding: 0 $spacing-s;
-
-        .image-card {
-          position: relative;
-          display: block;
-          width: 100%;
-
-          &::before {
-            content: '人氣 No.1';
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            font-size: $label-sm;
-            font-weight: $noto-sans-tc-medium;
-            text-align: center;
-            color: $text-highlight; //#57a203;
-            padding: $spacing-xs $spacing-s;
-            background-color: $primary-100;
-            z-index: 2;
-          }
-        }
-      }
-    }
-  }
-
-  // 聯名企劃
-  .campaign {
-    background-image: url('/images/banner-co-branded.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    padding-top: 10rem;
-    padding-bottom: $spacing-xs;
-    position: relative;
-
-    &__sparkle,
-    &__star {
-      display: none;
-      position: absolute;
-    }
-
-    .content {
-      text-align: center;
-
-      h2.heading {
-        color: $text-on-dark;
-        font-size: $display-2;
-
-        span {
-          color: $primary-300;
-          font-size: $headings-2;
-        }
-      }
-
-      h3.heading {
-        color: $text-on-dark;
-      }
-
-      p.desktop-text {
-        color: $neutral-500;
-        font-size: $headings-5;
-      }
-
-      .mobile-text {
-        display: none;
-      }
-
-      .cta-buy {
-        margin-bottom: 8.4rem;
-      }
-    }
-
-    .indicators {
-      .indicator {
-        width: 0.8rem;
-        height: 0.8rem;
-        background-color: #fff;
-        border-radius: 50%;
-
-        &.active {
-          width: 2.4rem;
-          background-color: $neutral-600;
-          border-radius: $radius-xs;
-        }
-      }
-    }
-  }
-
-  // 依系列選購
-  .categories {
-    padding: $spacing-5xl 0;
-
-    .category-list {
-      margin: 0 (-$spacing-s);
-
-      .category-item {
-        padding: 0 $spacing-s;
-        flex-grow: 1;
-        aspect-ratio: 1 /1;
-      }
-    }
-  }
-
-  // 靈感穿搭
-  .inspiration {
-    padding: $spacing-5xl 0;
-    h2.heading {
-      font-size: 3.2rem;
-    }
-
-    .grid-gallery {
-      display: grid;
-      gap: $spacing-xs;
-      grid-template-columns: repeat(auto-fill, minmax(20.933rem, 1fr));
-      grid-auto-flow: dense;
-
-      .grid-item {
-        position: relative;
-        overflow: hidden;
-
-        img {
-          width: 100%;
-          object-fit: cover;
-          display: block;
-        }
-
-        &.big {
-          grid-column: span 2;
-          grid-row: span 2;
-        }
-      }
-    }
-
-    .gallery--mobile {
-      display: none;
-    }
-  }
-}
-
-/*===RWD===*/
-@media screen and (max-width: 768px) {
-  // mobile-nav-link
-  .mobile-nav-bar {
-    display: flex;
-
-    .nav-item {
-      .nav-link {
-        display: block;
-        font-size: 1.6rem;
-        padding: $spacing-s 0;
-        line-height: 1.5;
-      }
-    }
-
-    .nav-item-1 {
-      background-color: $primary-200;
-    }
-
-    .nav-item-2 {
-      background-color: $primary-100;
-    }
-  }
-
-  // hero
-  .hero {
+  @include mobile {
     background-image: url('/images/banner-sm.png');
     padding: 15.5rem $spacing-l;
 
@@ -246,149 +67,320 @@ main {
       }
     }
   }
+}
 
-  // main
-  main {
+// main
+main {
+  h3.heading {
+    font-size: $headings-2; // 3.2rem
+  }
+
+  @include mobile {
     h3.heading {
       font-size: $headings-4;
     }
+  }
+}
 
-    // 新品上市
-    .new-arrival {
-      padding: $spacing-2xl 0;
+// 新品上市
+.new-arrival {
+  padding: $spacing-5xl 0;
 
-      h2.heading {
+  h2.heading {
+    font-size: $display-2; // 4.8rem;
+  }
+
+  .new-products {
+    margin: 0 (-$spacing-s);
+
+    .product-card-item {
+      padding: 0 $spacing-s;
+    }
+  }
+
+  @include mobile {
+    padding: $spacing-2xl 0;
+
+    h2.heading {
+      font-size: $headings-2;
+    }
+
+    .new-products {
+      margin: 0 -0.6rem;
+    }
+
+    .product-card {
+      &-item {
+        padding: 0 0.6rem;
+      }
+
+      &-large__image {
+        margin-bottom: $spacing-xs;
+      }
+
+      &-large__title {
+        font-size: $label-md;
+        margin-bottom: 0;
+      }
+
+      &-large__price {
+        font-size: $label-md;
+      }
+    }
+  }
+}
+
+// 熱銷補貨
+.hot {
+  padding: $spacing-5xl 0;
+
+  .hot-products {
+    margin: 0 (-$spacing-s);
+
+    .hot-product-item {
+      padding: 0 $spacing-s;
+    }
+
+    .image-card {
+      position: relative;
+      display: block;
+      width: 100%;
+
+      &::before {
+        content: '人氣 No.1';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: $label-sm;
+        font-weight: $noto-sans-tc-medium;
+        text-align: center;
+        color: $text-highlight; //#57a203;
+        padding: $spacing-xs $spacing-s;
+        background-color: $primary-100;
+        z-index: 2;
+      }
+    }
+  }
+
+  @include mobile {
+    padding: $spacing-2xl 0;
+
+    h2.heading {
+      font-size: $headings-4;
+    }
+
+    .hot-products {
+      overflow-x: scroll;
+      margin: 0 -0.6rem;
+
+      .hot-product-item {
+        flex: 0 0 30rem;
+        padding: 0 $spacing-xs;
+      }
+    }
+  }
+}
+
+// 聯名企劃
+.campaign {
+  background-image: url('/images/banner-co-branded.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 10rem;
+  padding-bottom: $spacing-xs;
+  text-align: center;
+
+  .content {
+    display: inline-block;
+    position: relative;
+
+    h2.heading {
+      color: $text-on-dark;
+      font-size: $display-2;
+
+      span {
+        color: $primary-300;
         font-size: $headings-2;
       }
-
-      .new-products {
-        margin: 0 -0.6rem;
-
-        .product-card-item {
-          padding: 0 0.6rem;
-
-          .product-card--large {
-            &__image {
-              margin-bottom: $spacing-xs;
-            }
-
-            &__title {
-              font-size: $label-md;
-              margin-bottom: 0;
-            }
-
-            &__price {
-              font-size: $label-md;
-            }
-          }
-        }
-      }
     }
 
-    // 熱銷補貨
-    .hot {
-      padding: $spacing-2xl 0;
+    h3.heading {
+      color: $text-on-dark;
+    }
 
+    p.desktop-text {
+      color: $neutral-500;
+      font-size: $headings-5;
+    }
+
+    .mobile-text {
+      display: none;
+    }
+
+    .cta-buy {
+      margin-bottom: 8.4rem;
+    }
+
+    .sparkle,
+    .star {
+      position: absolute;
+    }
+
+    .sparkle {
+      top: 17.4rem;
+      right: -4rem;
+    }
+
+    .star {
+      top: -3.2rem;
+      left: -8rem;
+    }
+  }
+
+  .indicators {
+    .indicator {
+      width: 0.8rem;
+      height: 0.8rem;
+      background-color: #fff;
+      border-radius: 50%;
+
+      &.active {
+        width: 2.4rem;
+        background-color: $neutral-600;
+        border-radius: $radius-xs;
+      }
+    }
+  }
+
+  @include mobile {
+    padding-top: $spacing-5xl;
+    padding-left: $spacing-s;
+    padding-right: $spacing-s;
+    overflow: hidden;
+
+    .content {
+      display: block;
       h2.heading {
-        font-size: $headings-4;
-      }
+        font-size: $headings-2;
 
-      .hot-products {
-        overflow-x: scroll;
-        margin: 0 -0.6rem;
-
-        .hot-product-item {
-          flex: 0 0 30rem;
-          padding: 0 $spacing-xs;
+        span {
+          display: block;
+          font-size: $headings-4;
+          margin: $spacing-xs 0;
         }
       }
-    }
 
-    // 聯名企劃
-    .campaign {
-      padding-top: $spacing-5xl;
-      overflow: hidden;
+      h3.heading {
+        font-size: $headings-5;
+      }
 
-      &__sparkle {
+      p.desktop-text {
+        display: none;
+      }
+
+      .mobile-text {
         display: block;
+
+        p {
+          color: $neutral-500;
+        }
+      }
+
+      .sparkle {
         width: 7.6rem;
         height: 6.4rem;
-        top: 70%;
-        right: -2.8rem;
+        top: 21.8rem;
+        right: -4rem;
       }
 
-      &__star {
-        display: block;
+      .star {
         width: 4.8rem;
         height: 4.8rem;
-        top: 3.2rem;
-        left: -2rem;
-      }
-
-      .content {
-        h2.heading {
-          font-size: $headings-2;
-
-          span {
-            display: block;
-            font-size: $headings-4;
-            margin: $spacing-xs 0;
-          }
-        }
-
-        h3.heading {
-          font-size: $headings-5;
-        }
-
-        p.desktop-text {
-          display: none;
-        }
-
-        .mobile-text {
-          display: block;
-
-          p {
-            color: $neutral-500;
-          }
-        }
-      }
-      .indicators {
-        display: none;
+        top: -3.2rem;
+        left: -3.2rem;
       }
     }
+    .indicators {
+      display: none;
+    }
+  }
+}
 
-    // 依系列選購
-    .categories {
-      padding: $spacing-2xl 0;
+// 依系列選購
+.categories {
+  padding: $spacing-5xl 0;
 
-      .category-list {
+  .category-list {
+    margin: 0 (-$spacing-s);
+
+    .category-item {
+      padding: 0 $spacing-s;
+      flex-grow: 1;
+    }
+  }
+
+  @include mobile {
+    padding: $spacing-2xl 0;
+
+    .category-list {
+      padding: 0 0.6rem;
+
+      .category-item {
         padding: 0 0.6rem;
-
-        .category-item {
-          padding: 0 0.6rem;
-        }
       }
     }
+  }
+}
 
-    // 靈感穿搭
-    .inspiration {
-      padding: $spacing-2xl 0;
+// 靈感穿搭
+.inspiration {
+  padding: $spacing-5xl 0;
+  h2.heading {
+    font-size: 3.2rem;
+  }
 
-      .gallery--desktop {
-        display: none;
+  .grid-gallery {
+    display: grid;
+    gap: $spacing-xs;
+    grid-template-columns: repeat(auto-fill, minmax(20.933rem, 1fr));
+    grid-auto-flow: dense;
+
+    .grid-item {
+      position: relative;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+        display: block;
       }
 
-      .gallery--mobile {
-        display: flex;
-        overflow-x: scroll;
+      &.big {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+    }
+  }
 
-        &__item {
-          flex: 0 0 30rem;
+  .gallery--mobile {
+    display: none;
+  }
 
-          img {
-            width: 100%;
-          }
-        }
+  @include mobile {
+    padding: $spacing-2xl 0;
+
+    .gallery--desktop {
+      display: none;
+    }
+
+    .gallery--mobile {
+      display: flex;
+      overflow-x: scroll;
+
+      &__item {
+        flex: 0 0 30rem;
       }
     }
   }

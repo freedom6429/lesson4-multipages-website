@@ -1,5 +1,6 @@
-@use '../variables' as *;
+@use '../abstracts/variables' as *;
 
+// 排版類
 .d-flex {
   display: flex;
 }
@@ -16,6 +17,27 @@
   align-items: center;
 }
 
+.gap-xs {
+  gap: $spacing-xs; // 0.8rem
+}
+
+.gap-s {
+  gap: $spacing-s; // 1.2 rem
+}
+
+.gap-m {
+  gap: $spacing-m; // 1.6rem
+}
+
+.gap-l {
+  gap: $spacing-l; // 2.4rem
+}
+
+.gap-40 {
+  gap: $spacing-2xl; // 4rem
+}
+
+// 文字類
 .heading {
   font-weight: $noto-sans-tc-bold;
   line-height: $heading-line-height;
@@ -31,6 +53,7 @@
   text-align: center;
 }
 
+// margin-bottom
 .mb-xxs {
   margin-bottom: $spacing-xxs; // 4px
 }
@@ -71,30 +94,7 @@
   margin-bottom: $spacing-5xl; // 64px
 }
 
-.gap-xs {
-  gap: $spacing-xs; // 0.8rem
-}
-
-.gap-s {
-  gap: $spacing-s; // 1.2 rem
-}
-
-.gap-m {
-  gap: $spacing-m; // 1.6rem
-}
-
-.gap-l {
-  gap: $spacing-l; // 2.4rem
-}
-
-.gap-40 {
-  gap: $spacing-2xl; // 4rem
-}
-
-.gap-mobile-xs {
-  gap: $spacing-xs; // 0.8rem
-}
-
+// 其他
 .disabled {
   opacity: 0.4;
   cursor: not-allowed;
@@ -108,11 +108,6 @@
 
   .col-mobile-12 {
     width: 100%;
-  }
-
-  main .container {
-    width: 100%;
-    padding: 0 1.2rem;
   }
 
   /* mobile utilities */
@@ -134,5 +129,9 @@
 
   .mb-mobile-xl {
     margin-bottom: $spacing-xl; // 32px
+  }
+
+  .gap-mobile-xs {
+    gap: $spacing-xs; // 0.8rem
   }
 }
